@@ -7,9 +7,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Uma anotação JPA que diz ao provedor JPA para mapear a classe "Produto" 
+ * para uma tabela chamada `surfistinha` no
+ * base de dados.
+ * 
+ * Produto é uma classe que representa um produto no sistema
+ * @id = Uma anotação JPA que diz ao provedor JPA para mapear o campo `id` para a chave primária da tabela.
+ * @GeneratedValue(strategy = GenerationType.IDENTITY) = Dizendo ao provedor JPA para usar o recurso de incremento automático do banco de dados para gerar um valor exclusivo para o campo `id`.
+ * @Column(nullable = false, unique = true) = Dizendo ao provedor JPA para mapear o campo para uma coluna na tabela do banco de dados. O `anulável` atributo está informando ao provedor JPA que a coluna não pode ser nula. O atributo `único` é informando ao provedor JPA que a coluna deve ser exclusiva.
+ */
 @Entity
 @Table(name="surfistinha")
 public class Produto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private final Long id = null;
